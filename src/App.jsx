@@ -95,7 +95,7 @@ export default function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data.message);
-        console.log('Deleted task');
+        console.log('Deleted taskk');
         setToDos(todos.filter((item) => item._id !== id));
       })
       .catch((error) => {
