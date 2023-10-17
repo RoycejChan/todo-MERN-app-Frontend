@@ -11,7 +11,7 @@ export default function App() {
   useEffect(() => {
     const fetchToDos = async () => {
       try {
-        const response = await fetch(`${base_URL}/ToDoList`);
+        const response = await fetch(`${base_URL}`);
         const data = await response.json();
         setToDos(data);
       } catch (error) {
@@ -35,7 +35,7 @@ export default function App() {
       priority: selectedPriority,
     };
   
-    fetch(`${base_URL}/ToDoList/new`, {
+    fetch(`${base_URL}/new`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export default function App() {
     const taskToEdit = todos.find((todo) => todo._id === id);
     const completed = taskToEdit ? taskToEdit.completed : false; 
   
-    fetch(`${base_URL}/ToDoList/edit/${id}`, {
+    fetch(`${base_URL}/edit/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export default function App() {
 
   const deleteTask = (id) => {
     
-    fetch(`${base_URL}/ToDoList/delete/${id}`, {
+    fetch(`${base_URL}/delete/${id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())
