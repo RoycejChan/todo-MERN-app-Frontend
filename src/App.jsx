@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 export default function App() {
-  const base_URL = "hhttps://mern-todotask-app-api.onrender.com";
+  const base_URL = "https://mern-todotask-app-api.onrender.com";
   const [newToDo, setNewToDo] = useState("");
   const [todos, setToDos] = useState([]);
   const [editingTask, setEditingTask] = useState({ id: null, text: "" });
